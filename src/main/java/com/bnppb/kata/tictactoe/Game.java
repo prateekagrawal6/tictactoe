@@ -67,7 +67,7 @@ public class Game {
         return Arrays.stream(new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9"}).anyMatch(x -> x.equals(input));
     }
 
-    private void placeAtBoard(String inputPosition) {
+    void placeAtBoard(String inputPosition) {
         switch (inputPosition) {
             case "1":
                 ticTacToe[0][0] = currentPlayer;

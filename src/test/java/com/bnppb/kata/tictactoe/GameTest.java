@@ -74,4 +74,31 @@ class GameTest {
         assertTrue(game.isValidInput("1"));
         assertTrue(game.isValidInput("9"));
     }
+
+    @Test
+    @DisplayName("Should valid place on board correct by position (1-9)")
+    void placeAtBoard() {
+        Game game = new Game();
+        game.initializeGame();
+
+        game.placeAtBoard("1");
+        game.placeAtBoard("2");
+        game.placeAtBoard("3");
+        game.placeAtBoard("4");
+        game.placeAtBoard("5");
+        game.placeAtBoard("6");
+        game.placeAtBoard("7");
+        game.placeAtBoard("8");
+        game.placeAtBoard("9");
+
+        assertEquals("X", game.getTicTacToe()[0][0]);
+        assertEquals("X", game.getTicTacToe()[0][1]);
+        assertEquals("X", game.getTicTacToe()[0][2]);
+        assertEquals("X", game.getTicTacToe()[1][0]);
+        assertEquals("X", game.getTicTacToe()[1][1]);
+        assertEquals("X", game.getTicTacToe()[1][2]);
+        assertEquals("X", game.getTicTacToe()[2][0]);
+        assertEquals("X", game.getTicTacToe()[2][1]);
+        assertEquals("X", game.getTicTacToe()[2][2]);
+    }
 }
