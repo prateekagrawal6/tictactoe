@@ -13,7 +13,6 @@ public class TictactoeApplication {
         printMenu();
         Game game = new Game();
         game.initializeGame();
-        game.showBoard();
         game.run();
     }
 

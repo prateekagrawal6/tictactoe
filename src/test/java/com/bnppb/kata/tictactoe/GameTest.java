@@ -9,22 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
 
-
-    @Test
-    @DisplayName("Should Switch the player")
-    void switchPlayer() {
-        Game game = new Game();
-
-        game.setCurrentPlayer("X");
-        assertEquals("X", game.getCurrentPlayer());
-
-        game.switchPlayer();
-        assertEquals("O", game.getCurrentPlayer());
-
-        game.switchPlayer();
-        assertEquals("X", game.getCurrentPlayer());
-    }
-
     @Test
     @DisplayName("Should initialize the board")
     void initializeGame1() {
@@ -100,5 +84,20 @@ class GameTest {
         assertEquals("X", game.getTicTacToe()[2][0]);
         assertEquals("X", game.getTicTacToe()[2][1]);
         assertEquals("X", game.getTicTacToe()[2][2]);
+    }
+
+    @Test
+    @DisplayName("Should Switch the player")
+    void switchPlayer() {
+        Game game = new Game();
+
+        game.setCurrentPlayer("X");
+        assertEquals("X", game.getCurrentPlayer());
+
+        game.switchPlayer();
+        assertEquals("O", game.getCurrentPlayer());
+
+        game.switchPlayer();
+        assertEquals("X", game.getCurrentPlayer());
     }
 }
