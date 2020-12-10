@@ -124,7 +124,7 @@ public class Game {
         setCurrentPlayer("X".equals(currentPlayer) ? "O" : "X");
     }
 
-    private void checkWinner() {
+    void checkWinner() {
         if (ticTacToe[0][0].equals(ticTacToe[0][1]) && ticTacToe[0][0].equals(ticTacToe[0][2])) {
             winner = ticTacToe[0][0];
         } else if (ticTacToe[0][2].equals(ticTacToe[1][2]) && ticTacToe[0][2].equals(ticTacToe[2][2])) {
@@ -146,23 +146,17 @@ public class Game {
             winner = null;
     }
 
-    public String getCurrentPlayer() {
-        return currentPlayer;
-    }
 
-    public void setCurrentPlayer(String currentPlayer) {
-        this.currentPlayer = currentPlayer;
-    }
-    public String[][] getTicTacToe() {
-        return ticTacToe;
-    }
 
-    public String getWinner() {
-        return winner;
-    }
+    // *  Getters and Setters * //
+    public String getCurrentPlayer() { return currentPlayer;}
 
-    public ArrayList<String> getMoves() {
-        return moves;
-    }
+    public void setCurrentPlayer(String currentPlayer) { this.currentPlayer = currentPlayer;}
+
+    public String[][] getTicTacToe() { return ticTacToe;}
+
+    public String getWinner() { return winner;}
+
+    public ArrayList<String> getMoves() { return moves; }
 
 }
