@@ -150,5 +150,16 @@ public class Game {
     public void setCurrentPlayer(String currentPlayer) {
         this.currentPlayer = currentPlayer;
     }
+    public String[][] getTicTacToe() {
+        return ticTacToe;
+    }
+
+    public String getWinner() {
+        return winner;
+    }
+
+    public ArrayList<String> getMoves() {
+        return moves;
+    }
 
 }

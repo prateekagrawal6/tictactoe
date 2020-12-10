@@ -11,12 +11,15 @@ class GameTest {
     @Test
     @DisplayName("Should Switch the player")
     void switchPlayer() {
-        Game fresh = new Game();
-        fresh.setCurrentPlayer("X");
-        assertEquals("X",fresh.getCurrentPlayer());
-        fresh.switchPlayer();
-        assertEquals("O",fresh.getCurrentPlayer());
-        fresh.switchPlayer();
-        assertEquals("X",fresh.getCurrentPlayer());
+        Game game = new Game();
+
+        game.setCurrentPlayer("X");
+        assertEquals("X", game.getCurrentPlayer());
+
+        game.switchPlayer();
+        assertEquals("O", game.getCurrentPlayer());
+
+        game.switchPlayer();
+        assertEquals("X", game.getCurrentPlayer());
     }
 }
