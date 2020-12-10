@@ -12,7 +12,7 @@ public class Game {
     private ArrayList<String> moves;
 
 
-    public void initializeGame() {
+    void initializeGame() {
         // Filling board with Empty value (just to make it looks good)
         ticTacToe = new String[3][3];
         for (int i = 0; i < 3; i++) {
@@ -29,12 +29,11 @@ public class Game {
 
         // rest moves for a fresh start
         moves = new ArrayList();
-
-        // show empty board
-        showBoard();
     }
 
-    public void run() {
+    void run() {
+        // show empty board
+        showBoard();
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.print("Enter the position(1-9) for " + currentPlayer + " : ");
@@ -66,7 +65,7 @@ public class Game {
         }
     }
 
-    public boolean isValidInput(String input) {
+    boolean isValidInput(String input) {
         return Arrays.stream(new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9"}).anyMatch(x -> x.equals(input));
     }
 
@@ -120,7 +119,7 @@ public class Game {
         }
     }
 
-    public void switchPlayer() {
+    void switchPlayer() {
         setCurrentPlayer("X".equals(currentPlayer) ? "O" : "X");
     }
 
@@ -147,16 +146,25 @@ public class Game {
     }
 
 
-
     // *  Getters and Setters * //
-    public String getCurrentPlayer() { return currentPlayer;}
+    public String getCurrentPlayer() {
+        return currentPlayer;
+    }
 
-    public void setCurrentPlayer(String currentPlayer) { this.currentPlayer = currentPlayer;}
+    public void setCurrentPlayer(String currentPlayer) {
+        this.currentPlayer = currentPlayer;
+    }
 
-    public String[][] getTicTacToe() { return ticTacToe;}
+    public String[][] getTicTacToe() {
+        return ticTacToe;
+    }
 
-    public String getWinner() { return winner;}
+    public String getWinner() {
+        return winner;
+    }
 
-    public ArrayList<String> getMoves() { return moves; }
+    public ArrayList<String> getMoves() {
+        return moves;
+    }
 
 }

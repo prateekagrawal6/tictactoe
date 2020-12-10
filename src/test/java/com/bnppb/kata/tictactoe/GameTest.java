@@ -66,24 +66,41 @@ class GameTest {
         game.initializeGame();
 
         game.placeAtBoard("1");
-        game.placeAtBoard("2");
-        game.placeAtBoard("3");
-        game.placeAtBoard("4");
-        game.placeAtBoard("5");
-        game.placeAtBoard("6");
-        game.placeAtBoard("7");
-        game.placeAtBoard("8");
-        game.placeAtBoard("9");
-
         assertEquals("X", game.getTicTacToe()[0][0]);
+        assertEquals(1, game.getMoves().size());
+
+        game.placeAtBoard("2");
         assertEquals("X", game.getTicTacToe()[0][1]);
+        assertEquals(2, game.getMoves().size());
+
+        game.placeAtBoard("3");
         assertEquals("X", game.getTicTacToe()[0][2]);
+        assertEquals(3, game.getMoves().size());
+
+        game.placeAtBoard("4");
         assertEquals("X", game.getTicTacToe()[1][0]);
+        assertEquals(4, game.getMoves().size());
+
+        game.placeAtBoard("5");
         assertEquals("X", game.getTicTacToe()[1][1]);
+        assertEquals(5, game.getMoves().size());
+
+        game.placeAtBoard("6");
         assertEquals("X", game.getTicTacToe()[1][2]);
+        assertEquals(6, game.getMoves().size());
+
+        game.placeAtBoard("7");
         assertEquals("X", game.getTicTacToe()[2][0]);
+        assertEquals(7, game.getMoves().size());
+
+        game.placeAtBoard("8");
         assertEquals("X", game.getTicTacToe()[2][1]);
+        assertEquals(8, game.getMoves().size());
+
+        game.placeAtBoard("9");
         assertEquals("X", game.getTicTacToe()[2][2]);
+        assertEquals(9, game.getMoves().size());
+
     }
 
     @Test
@@ -102,7 +119,7 @@ class GameTest {
     }
 
     @Test
-    @DisplayName("Should find out correct winner")
+    @DisplayName("Should find out correct winner-1")
     void checkWinner() {
         Game game = new Game();
         game.initializeGame();
@@ -121,7 +138,7 @@ class GameTest {
     }
 
     @Test
-    @DisplayName("Should find out correct winner - when X starts")
+    @DisplayName("Should find out correct winner-2")
     void checkWinner2() {
         Game game = new Game();
         game.initializeGame();
@@ -145,7 +162,7 @@ class GameTest {
     }
 
     @Test
-    @DisplayName("Should find out correct winner - when O starts")
+    @DisplayName("Should find out correct winner-3")
     void checkWinner3() {
         Game game = new Game();
         game.initializeGame();
@@ -170,8 +187,86 @@ class GameTest {
     }
 
     @Test
-    @DisplayName("Should Draw when out of moves")
+    @DisplayName("Should find out correct winner-4")
     void checkWinner4() {
+        Game game = new Game();
+        game.initializeGame();
+
+        game.placeAtBoard("5");
+        game.switchPlayer();
+        game.placeAtBoard("2");
+        game.switchPlayer();
+        game.placeAtBoard("3");
+        game.switchPlayer();
+        game.placeAtBoard("7");
+        game.switchPlayer();
+        game.placeAtBoard("4");
+        game.switchPlayer();
+        game.placeAtBoard("8");
+        game.switchPlayer();
+        game.placeAtBoard("9");
+        game.switchPlayer();
+        game.placeAtBoard("6");
+        game.switchPlayer();
+        game.placeAtBoard("1");
+
+        game.checkWinner();
+        assertEquals("X", game.getWinner());
+    }
+
+    @Test
+    @DisplayName("Should find out correct winner-5")
+    void checkWinner5() {
+        Game game = new Game();
+        game.initializeGame();
+
+        game.placeAtBoard("9");
+        game.switchPlayer();
+        game.placeAtBoard("8");
+        game.switchPlayer();
+        game.placeAtBoard("7");
+        game.switchPlayer();
+        game.placeAtBoard("6");
+        game.switchPlayer();
+        game.placeAtBoard("5");
+        game.switchPlayer();
+        game.placeAtBoard("4");
+        game.switchPlayer();
+        game.placeAtBoard("3");
+
+        game.checkWinner();
+        assertEquals("X", game.getWinner());
+    }
+
+    @Test
+    @DisplayName("Should find out correct winner-6")
+    void checkWinner6() {
+        Game game = new Game();
+        game.initializeGame();
+
+        game.placeAtBoard("2");
+        game.switchPlayer();
+        game.placeAtBoard("1");
+        game.switchPlayer();
+        game.placeAtBoard("4");
+        game.switchPlayer();
+        game.placeAtBoard("3");
+        game.switchPlayer();
+        game.placeAtBoard("6");
+        game.switchPlayer();
+        game.placeAtBoard("5");
+        game.switchPlayer();
+        game.placeAtBoard("8");
+        game.switchPlayer();
+        game.placeAtBoard("7");
+
+        game.checkWinner();
+        assertEquals("O", game.getWinner());
+    }
+
+    @Test
+    @DisplayName("Should Draw when out of moves")
+    void checkDraw() {
         Game game = new Game();
         game.initializeGame();
 
